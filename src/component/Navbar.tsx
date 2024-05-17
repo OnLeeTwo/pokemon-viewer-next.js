@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,7 +6,7 @@ function Navbar() {
     <nav className="bg-white sticky py-2 shadow-md top-0 z-10">
         <div className="max-w-3xl mx-auto flex items-center px-2 justify-between ">
           <Link href="/">
-            <Image src="/pokemonviewer.png" alt="Pokémon Viewer Logo" className="w-24" />
+            <img src="/pokemonviewer.png" alt="Pokémon Viewer Logo" className="w-24" />
           </Link>
           <ul className='flex flex-row gap-4'>
             <li>

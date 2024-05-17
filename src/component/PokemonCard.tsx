@@ -3,7 +3,6 @@ import axios from 'axios';
 import {IconContext} from "react-icons"
 import { FaStar, FaSpinner } from "react-icons/fa6";
 import CapitalizeFirstLetter from './CapitalizeFirstLetter';
-import Image from 'next/image';
 
 export const PokemonCard = ({ name, url }: { name: string; url: string }) => {
     const [pokemonSprite, setPokemonSprite] = useState<string>('');
@@ -37,7 +36,7 @@ export const PokemonCard = ({ name, url }: { name: string; url: string }) => {
             <div className="loading-spinner w-24 h-24 mb-2">
                 <FaSpinner className="spinner-icon" />
             </div>
-            : <Image src={pokemonSprite} alt={name} loading='lazy' className='w-24 h-24 mb-2'/>}
+            : <img src={pokemonSprite} alt={name} loading='lazy' className='w-24 h-24 mb-2'/>}
             <div className="text-lg font-semibold">{CapitalizeFirstLetter(name)}</div>
             <div className="favorite-icon absolute top-0 left-0 p-2">
                 <p>{`#${pokemonId}`}</p>

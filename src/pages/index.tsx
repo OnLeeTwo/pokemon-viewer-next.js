@@ -3,7 +3,6 @@ import { BsSearch } from 'react-icons/bs';
 import { Dashboard } from '@/component/Dashboard';
 import { PokemonProvider } from '@/providers/PokemonList';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 const Home = () => {
     const [inputValue, setInputValue] = useState('');
@@ -22,7 +21,7 @@ const Home = () => {
     return (
         <div className="flex flex-col items-center">
             <header className="bg-orange-500 text-white py-4 px-4 text-center w-full">
-                <Image src="/pokemonviewer.png" alt="Pokémon Viewer Logo" className="mx-auto w-1/4" />
+                <img src="/pokemonviewer.png" alt="Pokémon Viewer Logo" className="mx-auto w-1/4" />
                 <h1 className="text-3xl font-bold mb-2">Welcome to the Pokémon Viewer Website!</h1>
                 <h2 className="text-lg font-medium">Explore or search over 1000+ Pokémon available in the API</h2>
             </header>

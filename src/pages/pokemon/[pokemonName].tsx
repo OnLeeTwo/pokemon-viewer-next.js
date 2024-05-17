@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import CapitalizeFirstLetter from "@/component/CapitalizeFirstLetter";
 import { GetServerSideProps } from "next";
 import { BsSearch } from "react-icons/bs";
-import Image from "next/image";
 
 interface PokemonStats {
     id: number;
@@ -90,16 +89,14 @@ const PokemonName = ({pokemon} : PokemonProps) => {
 
     const goToPreviousPokemon = () => {
         const prevPokemonId = pokemon.id - 1;
-        console.log("new pokemon id " + prevPokemonId)
         setUrl(`https://pokeapi.co/api/v2/pokemon/${prevPokemonId}`)
-        router.replace(router.asPath)
+        router.push(`../pokemon/${prevPokemonId}`)
     };
 
     const goToNextPokemon = () => {
         const nextPokemonId = pokemon.id + 1;
-        console.log("new pokemon id " + nextPokemonId)
         setUrl(`https://pokeapi.co/api/v2/pokemon/${nextPokemonId}`);
-        router.replace(router.asPath)
+        router.push(`../pokemon/${nextPokemonId}`)
     };
 
     const addToFavorites = () => {
@@ -148,7 +145,7 @@ const PokemonName = ({pokemon} : PokemonProps) => {
                         Shiny
                     </button>
                     </div>
-                <Image className="w-32 h-32 mb-4 mx-auto" src={showShinySprite ? pokemon.shiny : pokemon.image} alt={pokemon.name} />
+                <img className="w-32 h-32 mb-4 mx-auto" src={showShinySprite ? pokemon.shiny : pokemon.image} alt={pokemon.name} />
                 <div className="text-center mb-4">
                     <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md shadow-sm" onClick={addToFavorites}>
                         {favoritePokemons.some(p => p.name === pokemon.name) ? 'Remove from Favorites' : 'Add to Favorites'}
