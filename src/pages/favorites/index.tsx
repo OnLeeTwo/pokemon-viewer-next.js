@@ -3,7 +3,7 @@ import { PokemonCard } from "@/component/PokemonCard";
 import { Pokemon } from "@/providers/PokemonList";
 
 const Favorite = () => {
-    const storedPokemon = localStorage.getItem('favoritePokemons');
+    const storedPokemon = typeof window !== "undefined" ? localStorage.getItem('favoritePokemons') : null;
     const pokemon: Pokemon[] = storedPokemon ? JSON.parse(storedPokemon) : [];
     
     return (
